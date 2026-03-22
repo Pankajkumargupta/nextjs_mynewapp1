@@ -1,25 +1,25 @@
 
 'use client'
 
-import { useState } from "react";
-
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+// import {} from
 export default function Home() {
-  const [name , setName] = useState("pankaj");
-   const apple=()=>{
-     setName("gupta")
+
+    const router =useRouter();
+    const navigate=(name)=>{
+      router.push(name)
     }
-    const InnerComp =()=>{
-    return(
-      <h1>this is inner component1</h1>
-    )}
   return (
-  
-    <div>
-      <h1 className="bg-green-400 flex-grid">hello {name} </h1>
-     <button onClick={()=>apple()}>Click me</button>
-      {/* <InnerComp/> */} 
-      {InnerComp()} 
-      {/* HOW TO USE COMPONENT AS A FUNCTION */}
-    </div>
+     <div>
+      <h1>This is home page</h1>
+     <Link href="/login">Go to login page</Link>
+     <Link href="/about">Go to about page</Link>
+     <br/>
+     <button onClick={()=>navigate("/login")} className="bg-blue-500">go to login page</button><br/>
+     <button onClick={()=>navigate("/about")} className="bg-green-500">go to about page</button>
+     {/* <button onClick={()=>router.push("/logon")} className="bg-blue-500">go to login page</button><br/>
+     <button onClick={()=>router.push("/about")} className="bg-green-500">go to about page</button> */}
+     </div>
   );
 }
