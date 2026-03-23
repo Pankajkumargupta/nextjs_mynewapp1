@@ -1,7 +1,7 @@
 const LoginTeacher = () => {
     return(
-        <div>
-            <h1>about page for LoginTeacher</h1>
+        <div className="flex  justify-center">
+            <h1 className="text-orange-400 text-3xl p-10 font-bold" >Login Page for Teacher</h1>
         </div>
     )
 }
