@@ -5,16 +5,23 @@
 //         <div><h1>Lecture 1</h1></div>
 //     )
 // }
-"use client"
-import { useParams } from 'next/navigation';
 
-export default function MultiRoute() {
-    // slug will be an array: ["2024", "biology", "john"]
-    const { slug } = useParams<{ slug: string[] }>();
 
-    return (
-        <div>
-           <div><h1>Lecture 1</h1></div>
-        </div>
-    );
+// const Lecture = async ( { params }:{ parama : Promise<{study: string }>} ) => {
+//     const {study}= await params;
+
+
+    const Lecture1 = async ({ params }: { params: Promise<{ lecture: string[] }> }) => {
+ 
+  const { lecture } = await params;
+  return (<div>
+    <div>Lecture : {lecture.join("/")}</div><br/>
+    Current Topic: <strong>{lecture[lecture.length - 1]}</strong>
+    <div>Lecture : {lecture}</div><br/>
+  </div>
+    
+
+  )
 }
+
+export default Lecture1;
