@@ -14,6 +14,7 @@
     const Lecture1 = async ({ params }: { params: Promise<{ lecture: string[] }> }) => {
  
   const { lecture } = await params;
+  console.log({ lecture })
   return (<div>
     <div>Lecture : {lecture.join("/")}</div><br/>
     Current Topic: <strong>{lecture[lecture.length - 1]}</strong>
