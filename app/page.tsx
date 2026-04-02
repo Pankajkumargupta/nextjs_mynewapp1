@@ -2,9 +2,12 @@
 // interface abcc{
 //   name: string;
 // }
+import custom from './custom.module.css'
+import other1 from './other.module.css'
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-// import {} from
+import outside from './style/outside.module.css';
+
 export default function Home() {
   const router = useRouter();
   const navigate = (name) => {
@@ -43,7 +46,11 @@ export default function Home() {
       <br />
       <hr />
 
-      <h1>stype and css with next</h1>
+      <h1 className="main">stype and css with next</h1>
+      <h2 className="main">heading 2</h2>
+      <p className={custom.main}>this is paragraph</p>
+      <p className={other1.main}>this is paragraph</p>
+      <p className={outside.main}>outside folder</p>
     </div>
   );
 }
