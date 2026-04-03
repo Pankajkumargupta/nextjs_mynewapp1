@@ -1,25 +1,40 @@
-
-import Image from "next/image";
-import Profile from "../public/next.svg"
+import { Roboto } from "next/font/google"
+const roboto =Roboto({
+  weight:'100',
+  subsets:['latin'],
+  display:'swap'
+});
 export default function Home() {
-  console.log(Profile);
+
   return(
     <div>
       <h1>Image optimazation</h1>
-      <Image src={Profile}
-      alt="next Logo"
-      width={200} 
-      height={500}/>
-
-      <Image src="https://getwallpapers.com/wallpaper/full/5/e/3/738772-nice-picture-for-desktop-background-1920x1200-laptop.jpg"
-       alt="next Logo"
-      width={200}
-      height={300}
-      />
+      {/* <h1 style={{fontFamily:'Roboto', fontWeight: 100}}>Image optimazation</h1> */}
+     <h1 className={roboto.className}>font with next js font feture</h1>
     </div>
   )
 }
 
+// import Image from "next/image";
+// import Profile from "../public/next.svg"
+// export default function Home() {
+//   console.log(Profile);
+//   return(
+//     <div>
+//       <h1>Image optimazation</h1>
+//       <Image src={Profile}
+//       alt="next Logo"
+//       width={200} 
+//       height={500}/>
+
+//       <Image src="https://getwallpapers.com/wallpaper/full/5/e/3/738772-nice-picture-for-desktop-background-1920x1200-laptop.jpg"
+//        alt="next Logo"
+//       width={200}
+//       height={300}
+//       />
+//     </div>
+//   )
+// }
 
 
 // "use client";
