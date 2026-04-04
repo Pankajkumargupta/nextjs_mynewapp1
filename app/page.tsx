@@ -11,6 +11,7 @@ export default function Home() {
       <h1>Image optimazation</h1>
       {/* <h1 style={{fontFamily:'Roboto', fontWeight: 100}}>Image optimazation</h1> */}
      <h1 className={roboto.className}>font with next js font feture</h1>
+     <img src="/dummyimg.jfif"/>
     </div>
   )
 }
