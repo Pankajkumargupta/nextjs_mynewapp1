@@ -5,7 +5,7 @@ const roboto =Roboto({
   display:'swap'
 });
 export default function Home() {
-
+console.log(process.env.NODE_ENV);
   return(
     <div>
       <h1>Image optimazation</h1>
