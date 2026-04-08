@@ -1,3 +1,4 @@
+import { API_Base_URL } from "@/config/constant";
 import { Roboto } from "next/font/google"
 const roboto =Roboto({
   weight:'100',
@@ -5,9 +6,21 @@ const roboto =Roboto({
   display:'swap'
 });
 export default function Home() {
-console.log(process.env.NODE_ENV);
+ // console.log("ENV CHECK:", process.env.SERVER_PASSWORD);
+//   console.log("ALL ENV:", Object.keys(process.env))
+  console.log(process.env.DB_PASSWORD);
+
   return(
     <div>
+      {/* {process.env.NODE_ENV === "development" ? (
+        <h1>You are on Development Mode</h1>
+      ) : (
+        <h1>You are on Production Mode</h1>
+      )} */}
+
+      {
+        API_Base_URL
+      }
       <h1>Image optimazation</h1>
       {/* <h1 style={{fontFamily:'Roboto', fontWeight: 100}}>Image optimazation</h1> */}
      <h1 className={roboto.className}>font with next js font feture</h1>
